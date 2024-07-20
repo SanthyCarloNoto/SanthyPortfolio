@@ -2,19 +2,256 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Portfolio</title>
+  <title>Portafolio - Santhy Carlo Noto</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    /* Estilo global */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    /* Menú de navegación */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar ul li {
+      margin: 0 15px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    /* Contenedor principal */
+    .home-container {
+      text-align: center;
+      padding: 50px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Título */
+    .home-container h1 {
+      font-size: 3rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Botón */
+    .home-container button {
+      background-color: #ffcc00;
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-top: 20px;
+    }
+
+    /* Efecto hover del botón */
+    .home-container button:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Sección del CV */
+    .cv-section {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 1200px;
+      text-align: left;
+    }
+
+    .cv-section h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    .cv-section h3 {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #ffcc00;
+    }
+
+    .cv-section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .cv-section ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    .cv-section a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
+    .cv-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contenedores específicos */
+    .experience, .education, .profile, .contact {
+      margin-bottom: 40px;
+    }
+
+    .cv-section button {
+      background-color: #ffcc00;
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-top: 20px;
+    }
+
+    .cv-section button:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Fondo animado */
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+
+    /* Estilo del fondo */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+      background-size: 300% 300%;
+      animation: gradientAnimation 15s ease infinite;
+      z-index: -1;
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
-
-  <div class="home-container">
-    <h1>Bienvenido a mi Portafolio</h1>
-    <p>Esta es la página principal de mi portafolio.</p>
-    <!-- Agrega más contenido según tus necesidades -->
+  <!-- Menú de navegación -->
+  <div class="navbar">
+    <ul>
+      <li><a href="#home">Inicio</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
   </div>
 
+  <!-- Contenedor principal -->
+  <div class="home-container" id="home">
+    <h1>Bienvenido a mi Portafolio</h1>
+    <p>¡Hola! Soy Santhy Carlo Noto, un desarrollador web con experiencia en crear aplicaciones modernas y funcionales. Este portafolio muestra algunos de mis proyectos más destacados y mi trabajo en el campo del desarrollo web. Explora mis proyectos, conoce más sobre mí, y no dudes en contactarme si estás interesado en colaborar o simplemente quieres saber más.</p>
+    <a href="#cv">
+      <button>Ver Mi CV</button>
+    </a>
+  </div>
+
+  <!-- Sección del CV -->
+  <div class="cv-section" id="cv">
+    <div class="experience">
+      <h2>Experiencia Profesional</h2>
+      <p><strong>Inmasan Tecnología. Desarrollador Web.</strong><br>
+      Fecha de inicio (junio/2024) - Presente</p>
+      <ul>
+        <li><strong>Desarrollo de Aplicaciones Web:</strong> Gestor de Inventario: Diseño y desarrollo de una aplicación de gestión de inventarios utilizando Node.js, Angular y Firebase. Implementando funcionalidades de administración, autenticación de usuarios y generación de reportes.</li>
+        <li><strong>Desarrollo en WordPress:</strong> WooCommerce: Desarrollo de tienda online con WooCommerce en WordPress, adaptando plantillas y plugins según las necesidades del cliente, mejorando la experiencia de compra y optimizando el rendimiento del sitio.</li>
+        <li><strong>Mantenimiento Web:</strong> Tareas diarias de mantenimiento, incluyendo actualización de contenido, optimización del rendimiento y resolución de errores. Copias de Seguridad: copias de seguridad regulares. Traspasos de Dominios: Gestión traspasos de dominios y configuré tablas DNS. Incidencias y Cambios: Resuelvo incidencias y cambios solicitados por los clientes en sus páginas web.</li>
+      </ul>
+    </div>
+    
+    <div class="education">
+      <h2>Formación</h2>
+      <p><strong>INSTITUTO NEBRIJA DE FORMACIÓN PROFESIONAL</strong><br>
+      Grado superior desarrollo de aplicaciones Web</p>
+      <ul>
+        <li>PHP / Laravel</li>
+        <li>JavaScript</li>
+        <li>NodeJS</li>
+        <li>Java Spring Boot</li>
+        <li>Angular</li>
+        <li>HTML</li>
+        <li>Base de datos MySql</li>
+        <li>WordPress</li>
+        <li>CSS</li>
+        <li>Unity / C#</li>
+        <li>FinalCut</li>
+      </ul>
+    </div>
+
+    <div class="profile">
+      <h2>Perfil Profesional</h2>
+      <p>Técnico en Desarrollo de Aplicaciones Web con conocimientos sólidos en PHP, Node, Angular, SQL, Java, etc. Compromiso, trabajo en equipo, capacidad emprendedor, responsable, nuevos retos, constante actualización en nuevas tecnologías.</p>
+    </div>
+
+    <div class="contact">
+      <h2>Contacto</h2>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Santhycarlonoto" target="_blank">linkedin.com/in/Santhycarlonoto</a><br>
+      <strong>Email:</strong> <a href="mailto:santhy472@gmail.com">santhy472@gmail.com</a><br>
+      <strong>Teléfono:</strong> +34 689917650</p>
+    </div>
+
+    <a href="#home">
+      <button>Volver al Inicio</button>
+    </a>
+  </div>
 </body>
 </html>
