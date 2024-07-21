@@ -1,19 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>Portafolio - Santhy Carlo Noto</title>
-  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* Estilo global */
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
       color: #fff;
+      background: linear-gradient(120deg, #2c3e50, #3498db);
+      background-size: 200% 200%;
+      animation: gradientAnimation 10s ease infinite;
+      height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* Menú de navegación */
@@ -22,10 +33,13 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 10px 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .navbar ul {
@@ -33,12 +47,10 @@
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .navbar ul li {
-      margin: 0 15px;
+      margin: 0 20px;
     }
 
     .navbar ul li a {
@@ -48,38 +60,53 @@
       padding: 10px 15px;
       border-radius: 5px;
       transition: background-color 0.3s, color 0.3s;
+      font-weight: 600;
     }
 
     .navbar ul li a:hover {
-      background-color: #fff;
-      color: #000;
+      background-color: #3498db;
+      color: #fff;
     }
 
     /* Contenedor principal */
     .home-container {
       text-align: center;
       padding: 50px;
-      height: 100vh;
+      height: calc(100vh - 60px); /* Ajusta altura para el menú fijo */
       display: flex;
       flex-direction: column;
       justify-content: center;
-      z-index: 1;
       position: relative;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      margin: 80px auto 0; /* Ajusta el margen superior para el menú fijo */
+      max-width: 800px;
     }
 
     /* Título */
     .home-container h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin: 0;
       padding: 0;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    .home-container p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+      color: #fff;
     }
 
     /* Botón */
     .home-container button {
-      background-color: #ffcc00;
+      background-color: #3498db;
       border: none;
-      color: #000;
-      padding: 10px 20px;
+      color: #fff;
+      padding: 12px 25px;
       font-size: 1rem;
       cursor: pointer;
       border-radius: 5px;
@@ -87,39 +114,39 @@
       margin-top: 20px;
     }
 
-    /* Efecto hover del botón */
     .home-container button:hover {
-      background-color: #000;
+      background-color: #2980b9;
       color: #fff;
     }
 
     /* Sección del CV */
     .cv-section {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(255, 255, 255, 0.1);
       padding: 20px;
       border-radius: 10px;
       margin: 20px auto;
-      width: 80%;
-      max-width: 1200px;
-      text-align: left;
+      width: 90%;
+      max-width: 1000px;
+      color: #fff;
     }
 
     .cv-section h2 {
       font-size: 2rem;
-      margin-bottom: 10px;
-      color: #ffcc00;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
 
     .cv-section h3 {
-      font-size: 1.5rem;
-      margin-top: 10px;
-      color: #ffcc00;
+      font-size: 1.4rem;
+      margin-top: 15px;
+      color: #fff;
     }
 
-    .cv-section p {
+    .cv-section p, .cv-section ul {
       font-size: 1rem;
       line-height: 1.6;
-      color: #ddd;
+      color: #fff;
     }
 
     .cv-section ul {
@@ -128,7 +155,7 @@
     }
 
     .cv-section a {
-      color: #ffcc00;
+      color: #3498db;
       text-decoration: none;
     }
 
@@ -138,14 +165,14 @@
 
     /* Contenedores específicos */
     .experience, .education, .profile, .contact {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .cv-section button {
-      background-color: #ffcc00;
+      background-color: #3498db;
       border: none;
-      color: #000;
-      padding: 10px 20px;
+      color: #fff;
+      padding: 12px 25px;
       font-size: 1rem;
       cursor: pointer;
       border-radius: 5px;
@@ -154,35 +181,30 @@
     }
 
     .cv-section button:hover {
-      background-color: #000;
+      background-color: #2980b9;
       color: #fff;
     }
 
-    /* Fondo animado */
-    @keyframes gradientAnimation {
-      0% {
-        background-position: 0% 0%;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
       }
-      50% {
-        background-position: 100% 100%;
-      }
-      100% {
-        background-position: 0% 0%;
-      }
-    }
 
-    /* Estilo del fondo */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
-      background-size: 300% 300%;
-      animation: gradientAnimation 15s ease infinite;
-      z-index: -1;
+      .navbar ul li {
+        margin: 10px 0;
+      }
+
+      .home-container {
+        padding: 30px;
+        height: auto;
+        margin-top: 60px;
+      }
+
+      .cv-section {
+        width: 95%;
+      }
     }
   </style>
 </head>
@@ -192,6 +214,7 @@
     <ul>
       <li><a href="#home">Inicio</a></li>
       <li><a href="#cv">CV</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#contact">Contacto</a></li>
     </ul>
   </div>
@@ -207,6 +230,12 @@
 
   <!-- Sección del CV -->
   <div class="cv-section" id="cv">
+    <div class="contact">
+      <h2>Contacto</h2>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Santhycarlonoto" target="_blank">linkedin.com/in/Santhycarlonoto</a><br>
+      <strong>Email:</strong> <a href="mailto:santhy472@gmail.com">santhy472@gmail.com</a><br>
+      <strong>Teléfono:</strong> +34 689917650</p>
+    </div>
     <div class="experience">
       <h2>Experiencia Profesional</h2>
       <p><strong>Inmasan Tecnología. Desarrollador Web.</strong><br>
@@ -239,19 +268,8 @@
 
     <div class="profile">
       <h2>Perfil Profesional</h2>
-      <p>Técnico en Desarrollo de Aplicaciones Web con conocimientos sólidos en PHP, Node, Angular, SQL, Java, etc. Compromiso, trabajo en equipo, capacidad emprendedor, responsable, nuevos retos, constante actualización en nuevas tecnologías.</p>
+      <p>Técnico en Desarrollo de Aplicaciones Web con conocimientos sólidos en PHP, Node, Angular, SQL, Java, etc. Compromiso, trabajo en equipo y capacidad de resolución de problemas. Apasionado por la tecnología y el aprendizaje continuo.</p>
     </div>
-
-    <div class="contact">
-      <h2>Contacto</h2>
-      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Santhycarlonoto" target="_blank">linkedin.com/in/Santhycarlonoto</a><br>
-      <strong>Email:</strong> <a href="mailto:santhy472@gmail.com">santhy472@gmail.com</a><br>
-      <strong>Teléfono:</strong> +34 689917650</p>
-    </div>
-
-    <a href="#home">
-      <button>Volver al Inicio</button>
-    </a>
   </div>
 </body>
 </html>
