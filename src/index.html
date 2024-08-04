@@ -42,6 +42,13 @@
       align-items: center;
     }
 
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
     .navbar ul {
       list-style: none;
       margin: 0;
@@ -84,7 +91,115 @@
       max-width: 800px;
     }
 
-    /* Título */
+    /* Estilo de la animación */
+    .animation-container {
+      width: 100%;
+      max-width: 300px; /* Ajusta el tamaño de la animación */
+      margin: 0 auto 20px; /* Centra la animación y agrega un margen inferior */
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .worker {
+      width: 60px;
+      height: 150px; /* Altura total del muñeco */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: work 1s infinite;
+    }
+
+    .head {
+      width: 30px;
+      height: 30px;
+      background-color: #f39c12; /* Color de la cabeza */
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+    }
+
+    .body {
+      width: 40px;
+      height: 50px;
+      background-color: #f39c12; /* Color del cuerpo */
+      border-radius: 10px;
+      position: absolute;
+      top: 35px;
+    }
+
+    .left-arm, .right-arm {
+      width: 10px;
+      height: 40px;
+      background-color: #f39c12; /* Color de los brazos */
+      position: absolute;
+      top: 35px;
+    }
+
+    .left-arm {
+      left: -10px;
+      transform-origin: top left;
+      animation: moveArmLeft 1s infinite;
+    }
+
+    .right-arm {
+      right: -10px;
+      transform-origin: top right;
+      animation: moveArmRight 1s infinite;
+    }
+
+    .left-leg, .right-leg {
+      width: 10px;
+      height: 40px;
+      background-color: #f39c12; /* Color de las piernas */
+      position: absolute;
+      bottom: 0;
+    }
+
+    .left-leg {
+      left: 10px;
+    }
+
+    .right-leg {
+      right: 10px;
+    }
+
+    .tool {
+      width: 30px;
+      height: 10px;
+      background-color: #3498db; /* Color de la herramienta */
+      position: absolute;
+      top: 75px;
+      left: 15px;
+      border-radius: 5px;
+      animation: moveTool 1s infinite;
+    }
+
+    @keyframes work {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    @keyframes moveTool {
+      0% { left: 15px; }
+      50% { left: 35px; }
+      100% { left: 15px; }
+    }
+
+    @keyframes moveArmLeft {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(-20deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    @keyframes moveArmRight {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(20deg); }
+      100% { transform: rotate(0deg); }
+    }
+
     .home-container h1 {
       font-size: 2.5rem;
       margin: 0;
@@ -163,11 +278,6 @@
       text-decoration: underline;
     }
 
-    /* Contenedores específicos */
-    .experience, .education, .profile, .contact {
-      margin-bottom: 30px;
-    }
-
     .cv-section button {
       background-color: #3498db;
       border: none;
@@ -185,11 +295,67 @@
       color: #fff;
     }
 
+    /* Área de código */
+    .code-container {
+      width: 100%;
+      max-width: 300px;
+      height: 100px;
+      margin: 20px auto;
+      background: #2d3436;
+      color: #00ff00;
+      font-family: monospace;
+      padding: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .code-container::before {
+      content: "/* Código en progreso */";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 0.9rem;
+      color: #00ff00;
+    }
+
+    .code-text {
+      white-space: pre-wrap;
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      animation: typing 5s steps(30, end) infinite;
+      overflow: hidden;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+      }
+
       .navbar ul {
+        display: none;
         flex-direction: column;
         align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        left: 0;
+        z-index: 1;
+      }
+
+      .navbar ul.active {
+        display: flex;
       }
 
       .navbar ul li {
@@ -211,7 +377,8 @@
 <body>
   <!-- Menú de navegación -->
   <div class="navbar">
-    <ul>
+    <span class="menu-toggle">&#9776;</span>
+    <ul class="menu">
       <li><a href="#home">Inicio</a></li>
       <li><a href="#cv">CV</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
@@ -226,6 +393,30 @@
     <a href="#cv">
       <button>Ver Mi CV</button>
     </a>
+
+    <!-- Contenedor de la animación -->
+    <div class="animation-container">
+      <div class="worker">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="left-arm"></div>
+        <div class="right-arm"></div>
+        <div class="left-leg"></div>
+        <div class="right-leg"></div>
+        <div class="tool"></div>
+      </div>
+    </div>
+
+    <!-- Área de código -->
+    <div class="code-container">
+      <div class="code-text">
+        // Gracias por visitar mi portfolio...<br>
+        function saludo() {<br>
+        &nbsp;&nbsp;console.log("¡Hola, soy Santhy Noto!");<br>
+        }<br>
+        saludo();<br>
+      </div>
+    </div>
   </div>
 
   <!-- Sección del CV -->
@@ -233,20 +424,43 @@
     <div class="contact">
       <h2>Contacto</h2>
       <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Santhycarlonoto" target="_blank">linkedin.com/in/Santhycarlonoto</a><br>
-      <strong>Email:</strong> <a href="mailto:santhy472@gmail.com">santhy472@gmail.com</a><br>
-      <strong>Teléfono:</strong> +34 689917650</p>
+        <strong>Email:</strong> <a href="mailto:santhy472@gmail.com">santhy472@gmail.com</a><br>
+        <strong>GitHub:</strong> <a href="https://github.com/SanthyCarloNoto" target="_blank">github.com/SanthyCarloNoto</a><br>
+        <strong>Teléfono:</strong> +34 689917650</p>
     </div>
     <div class="experience">
       <h2>Experiencia Profesional</h2>
       <p><strong>Inmasan Tecnología. Desarrollador Web.</strong><br>
-      Fecha de inicio (junio/2024) - Presente</p>
       <ul>
-        <li><strong>Desarrollo de Aplicaciones Web:</strong> Gestor de Inventario: Diseño y desarrollo de una aplicación de gestión de inventarios utilizando Node.js, Angular y Firebase. Implementando funcionalidades de administración, autenticación de usuarios y generación de reportes.</li>
-        <li><strong>Desarrollo en WordPress:</strong> WooCommerce: Desarrollo de tienda online con WooCommerce en WordPress, adaptando plantillas y plugins según las necesidades del cliente, mejorando la experiencia de compra y optimizando el rendimiento del sitio.</li>
-        <li><strong>Mantenimiento Web:</strong> Tareas diarias de mantenimiento, incluyendo actualización de contenido, optimización del rendimiento y resolución de errores. Copias de Seguridad: copias de seguridad regulares. Traspasos de Dominios: Gestión traspasos de dominios y configuré tablas DNS. Incidencias y Cambios: Resuelvo incidencias y cambios solicitados por los clientes en sus páginas web.</li>
+        <li><strong>Desarrollo de Aplicaciones Web:</strong><br>
+        <em>Gestor de Inventario:</em> Diseñé y desarrollé una aplicación de gestión de inventarios utilizando Node.js, Angular y Firebase. Implementé funcionalidades de administración, autenticación de usuarios y generación de reportes.</li>
+        <li><strong>Desarrollo en WordPress:</strong><br>
+        <em>WooCommerce:</em> Desarrollé una tienda online con WooCommerce en WordPress, adaptando plantillas y plugins según las necesidades del cliente, mejorando la experiencia de compra y optimizando el rendimiento del sitio.</li>
+        <li><strong>Mantenimiento Web:</strong><br>
+        Tareas diarias de mantenimiento, incluyendo actualización de contenido, optimización del rendimiento y resolución de errores.<br>
+        <em>Copias de Seguridad:</em> Realización de copias de seguridad regulares.<br>
+        <em>Traspasos de Dominios:</em> Gestión de traspasos de dominios y configuración de tablas DNS.<br>
+        <em>Incidencias y Cambios:</em> Resolución de incidencias y cambios solicitados por los clientes en sus páginas web.</li>
+      </ul>
+      <p><strong>Men's Health - Editor de Vídeo.</strong></p>
+      <ul>
+        <li><strong>Producción de vídeo:</strong> Creación y edición de contenido audiovisual para la web y redes sociales.</li>
+        <li><strong>Postproducción de vídeo:</strong> Edición de vídeos para su publicación en plataformas web y redes sociales.</li>
+        <li><strong>Diseño de miniaturas:</strong> Creación de miniaturas atractivas y optimizadas para la web y redes sociales.</li>
+      </ul>
+      <p><strong>Venevisión - Ayudante de Cámara.</strong></p>
+      <ul>
+        <li><strong>Enfoque y control de la cámara:</strong> Aseguramiento de la calidad visual mediante el enfoque y control precisos de la cámara.</li>
+        <li><strong>Gestión del equipo de cámara:</strong> Coordinación y mantenimiento del equipo técnico durante la producción.</li>
+      </ul>
+      <p><strong>Goiko Grill - Gerente General / Jefe de Cocina.</strong></p>
+      <ul>
+        <li><strong>Gestión de equipo:</strong> Liderazgo y coordinación del personal en cocina y operaciones.</li>
+        <li><strong>Control de costes y abastecimientos:</strong> Supervisión de inventarios, control de costes y gestión de suministros.</li>
+        <li><strong>Gestión operativa y financiera:</strong> Supervisión de las operaciones diarias y la salud financiera del restaurante.</li>
+        <li><strong>Supervisión de personal:</strong> Manejo de recursos humanos, incluyendo contratación, capacitación y desarrollo de personal.</li>
       </ul>
     </div>
-    
     <div class="education">
       <h2>Formación</h2>
       <p><strong>INSTITUTO NEBRIJA DE FORMACIÓN PROFESIONAL</strong><br>
@@ -265,11 +479,29 @@
         <li>FinalCut</li>
       </ul>
     </div>
-
     <div class="profile">
       <h2>Perfil Profesional</h2>
       <p>Técnico en Desarrollo de Aplicaciones Web con conocimientos sólidos en PHP, Node, Angular, SQL, Java, etc. Compromiso, trabajo en equipo y capacidad de resolución de problemas. Apasionado por la tecnología y el aprendizaje continuo.</p>
     </div>
+    <div class="personal-projects">
+      <h2>Proyectos Personales</h2>
+      <p>Desarrollo de proyectos como "SantiBot", un chatbot para plataformas web, y otros proyectos destacados en GitHub.</p>
+    </div>
+    <div class="education">
+      <h2>Formación</h2>
+      <p><strong>INSTITUTO NEBRIJA DE FORMACIÓN PROFESIONAL</strong><br>
+      Grado superior desarrollo de aplicaciones Web</p>
+    </div>
+    <a href="#contact">
+      <button>Contacto</button>
+    </a>
   </div>
+
+  <!-- Script para el menú desplegable -->
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.navbar ul').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
