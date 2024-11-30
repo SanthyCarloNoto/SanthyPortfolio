@@ -8,130 +8,137 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
 </head>
-<body>
-  <!-- Menú de navegación -->
-  <div class="navbar">
-    <span class="menu-toggle">&#9776;</span>
-    <ul class="menu">
-      <li><a href="#home">Inicio</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-  </div>
+<body id="top">
 
-  <!-- Contenedor principal -->
-  <div class="home-container" id="home">
-    <h1>Bienvenido a mi Portafolio</h1>
-    <p>¡Hola! Soy Santhy Carlo Noto, un desarrollador web con experiencia en crear aplicaciones modernas y funcionales. Este portafolio muestra algunos de mis proyectos más destacados y mi trabajo en el campo del desarrollo web. Explora mis proyectos, conoce más sobre mí, y no dudes en contactarme si estás interesado en colaborar o simplemente quieres saber más.</p>
-    <a href="#cv">
-      <button>Ver Mi CV</button>
-    </a>
+  <div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');"> 
+    
+    <div class="wrapper row1">
+      <header id="header" class="hoc clear"> 
 
-    <!-- Contenedor de la animación -->
-    <div class="animation-container">
-      <div class="worker">
-        <div class="head"></div>
-        <div class="body"></div>
-        <div class="left-arm"></div>
-        <div class="right-arm"></div>
-        <div class="left-leg"></div>
-        <div class="right-leg"></div>
-        <div class="tool"></div>
+        <div id="logo" class="fl_left">
+          <h1><a href="index.html">Santhy Carlo Noto</a></h1>
+        </div>
+        <nav id="mainav" class="fl_right">
+          <ul class="clear">
+            <li class="active"><a href="index.html">Inicio</a></li>
+            <li><a class="drop" href="#">Más</a>
+              <ul>
+                <li><a href="pages/full-width.html">Experiencia Laboral.</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+      </header>
+    </div>
+
+    <div id="pageintro" class="hoc clear"> 
+
+      <div class="flexslider basicslider">
+        <ul class="slides">
+          <article>
+            <h2>Desarrollador Web</h2>
+            <p>¡Hola! Soy Santhy Carlo Noto, un desarrollador web con experiencia en crear aplicaciones modernas y funcionales. Este portafolio muestra algunos de mis proyectos más destacados y mi trabajo en el campo del desarrollo web. Explora mis proyectos, conoce más sobre mí, y no dudes en contactarme si estás interesado en colaborar o simplemente quieres saber más.</p>
+            
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Santhycarlonoto" target="_blank">linkedin.com/in/Santhycarlonoto</a><br>
+               <strong>Email:</strong> <a href="mailto:santhy472@gmail.com">santhy472@gmail.com</a><br>
+               <strong>GitHub:</strong> <a href="https://github.com/SanthyCarloNoto" target="_blank">github.com/SanthyCarloNoto</a><br>
+               <strong>Teléfono:</strong> +34 689917650</p>
+          </article>
+        </ul>
       </div>
-    </div>
 
-    <!-- Área de código -->
-    <div class="code-container">
-      <div class="code-text">
-        // Gracias por visitar mi portfolio...<br>
-        function saludo() {<br>
-        &nbsp;&nbsp;console.log("¡Hola, soy Santhy Noto!");<br>
-        }<br>
-        saludo();<br>
+    </div>
+  </div>
+
+  <div class="wrapper row3">
+    <main class="hoc container clear"> 
+
+      <div class="btmspace-80 center">
+        <h3 class="nospace">Mis proyectos</h3>
+        <p class="nospace">Estos son algunos proyectos que he realizado</p>
       </div>
-    </div>
-  </div>
+      <ul class="nospace group services">
+        <li class="one_third first active">
+          <article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
+            <div class="txtwrap"><i class="block fa fa-4x fa-shopping-cart"></i>
+              <h6 class="heading">Ecommerce</h6>
+              <p>Desarrollé una tienda online para el alquiler de equipos, permitiendo a los clientes realizar compras y gestiones a través de una plataforma intuitiva&hellip;</p>
+            </div>
+          </article>
+        </li>
+        <li class="one_third">
+          <article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
+            <div class="txtwrap"><i class="block fa fa-4x fa-users"></i>
+              <h6 class="heading">Gestión de Usuarios</h6>
+              <p>Implementé un sistema de gestión de usuarios para una tienda online, facilitando el registro, administración de cuentas y seguimiento de pedidos&hellip;</p>
+            </div>
+          </article>
+        </li>
+        <li class="one_third active">
+          <article class="bgded overlay" style="background-image:url('images/demo/320x340.png');">
+            <div class="txtwrap"><i class="block fa fa-4x fa-cogs"></i>
+              <h6 class="heading">CRM</h6>
+              <p>Actualmente desarrollo un CRM para gestionar relaciones con clientes, optimizando la comunicación y mejorando la eficiencia de las operaciones&hellip;</p>
+            </div>
+          </article>
+        </li>
+      </ul>
 
-  <!-- Sección del CV -->
-  <div class="cv-section" id="cv">
-    <div class="contact">
-      <h2>Contacto</h2>
-      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Santhycarlonoto" target="_blank">linkedin.com/in/Santhycarlonoto</a><br>
-        <strong>Email:</strong> <a href="mailto:santhy472@gmail.com">santhy472@gmail.com</a><br>
-        <strong>GitHub:</strong> <a href="https://github.com/SanthyCarloNoto" target="_blank">github.com/SanthyCarloNoto</a><br>
-        <strong>Teléfono:</strong> +34 689917650</p>
-    </div>
-    <div class="experience">
-      <h2>Experiencia Profesional</h2>
-      <p><strong>Inmasan Tecnología. Desarrollador Web.</strong><br>
-      <ul>
-        <li><strong>Desarrollo de Aplicaciones Web:</strong><br>
-        <em>Gestor de Inventario:</em> Diseñé y desarrollé una aplicación de gestión de inventarios utilizando Node.js, Angular y Firebase. Implementé funcionalidades de administración, autenticación de usuarios y generación de reportes.</li>
-        <li><strong>Desarrollo en WordPress:</strong><br>
-        <em>WooCommerce:</em> Desarrollé una tienda online con WooCommerce en WordPress, adaptando plantillas y plugins según las necesidades del cliente, mejorando la experiencia de compra y optimizando el rendimiento del sitio.</li>
-        <li><strong>Mantenimiento Web:</strong><br>
-        Tareas diarias de mantenimiento, incluyendo actualización de contenido, optimización del rendimiento y resolución de errores.<br>
-        <em>Copias de Seguridad:</em> Realización de copias de seguridad regulares.<br>
-        <em>Traspasos de Dominios:</em> Gestión de traspasos de dominios y configuración de tablas DNS.<br>
-        <em>Incidencias y Cambios:</em> Resolución de incidencias y cambios solicitados por los clientes en sus páginas web.</li>
-      </ul>
-      <p><strong>Men's Health - Editor de Vídeo.</strong></p>
-      <ul>
-        <li><strong>Producción de vídeo:</strong> Creación y edición de contenido audiovisual para la web y redes sociales.</li>
-        <li><strong>Postproducción de vídeo:</strong> Edición de vídeos para su publicación en plataformas web y redes sociales.</li>
-        <li><strong>Diseño de miniaturas:</strong> Creación de miniaturas atractivas y optimizadas para la web y redes sociales.</li>
-      </ul>
-      <p><strong>Venevisión - Ayudante de Cámara.</strong></p>
-      <ul>
-        <li><strong>Enfoque y control de la cámara:</strong> Aseguramiento de la calidad visual mediante el enfoque y control precisos de la cámara.</li>
-        <li><strong>Gestión del equipo de cámara:</strong> Coordinación y mantenimiento del equipo técnico durante la producción.</li>
-      </ul>
-      <p><strong>Goiko Grill - Gerente General / Jefe de Cocina.</strong></p>
-      <ul>
-        <li><strong>Gestión de equipo:</strong> Liderazgo y coordinación del personal en cocina y operaciones.</li>
-        <li><strong>Control de costes y abastecimientos:</strong> Supervisión de inventarios, control de costes y gestión de suministros.</li>
-        <li><strong>Gestión operativa y financiera:</strong> Supervisión de las operaciones diarias y la salud financiera del restaurante.</li>
-        <li><strong>Supervisión de personal:</strong> Manejo de recursos humanos, incluyendo contratación, capacitación y desarrollo de personal.</li>
-      </ul>
-    </div>
-    <div class="education">
-      <h2>Formación</h2>
-      <p><strong>INSTITUTO NEBRIJA DE FORMACIÓN PROFESIONAL</strong><br>
-      Grado superior desarrollo de aplicaciones Web</p>
-      <ul>
-        <li>PHP / Laravel</li>
-        <li>JavaScript</li>
-        <li>NodeJS</li>
-        <li>Java Spring Boot</li>
-        <li>Angular</li>
-        <li>HTML</li>
-        <li>Base de datos MySql</li>
-        <li>WordPress</li>
-        <li>CSS</li>
-        <li>Unity / C#</li>
-        <li>FinalCut</li>
-      </ul>
-    </div>
-    <div class="profile">
-      <h2>Perfil Profesional</h2>
-      <p>Técnico en Desarrollo de Aplicaciones Web con conocimientos sólidos en PHP, Node, Angular, SQL, Java, etc. Compromiso, trabajo en equipo y capacidad de resolución de problemas. Apasionado por la tecnología y el aprendizaje continuo.</p>
-    </div>
-    <div class="education">
-      <h2>Formación</h2>
-      <p><strong>INSTITUTO NEBRIJA DE FORMACIÓN PROFESIONAL</strong><br>
-      Grado superior desarrollo de aplicaciones Web</p>
-    </div>
-    <a href="#contact">
-      <button>Contacto</button>
-    </a>
-  </div>
+      <div class="wrapper">
+        <article id="shout" class="hoc container clear"> 
 
-  <!-- Script para el menú desplegable -->
-  <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.navbar ul').classList.toggle('active');
-    });
-  </script>
-</body>
+          <div class="education">
+            <h2>Formación</h2>
+            <p><strong>INSTITUTO NEBRIJA DE FORMACIÓN PROFESIONAL</strong><br>
+            Grado superior desarrollo de aplicaciones Web</p>
+            <ul class="skills-list">
+              <li><i class="fa fa-php"></i> PHP / Laravel</li>
+              <li><i class="fa fa-js"></i> JavaScript</li>
+              <li><i class="fa fa-node-js"></i> NodeJS</li>
+              <li><i class="fa fa-java"></i> Java Spring Boot</li>
+              <li><i class="fa fa-angular"></i> Angular</li>
+              <li><i class="fa fa-html5"></i> HTML</li>
+              <li><i class="fa fa-database"></i> Base de datos MySQL</li>
+              <li><i class="fa fa-wordpress"></i> WordPress</li>
+              <li><i class="fa fa-css3-alt"></i> CSS</li>
+              <li><i class="fa fa-cogs"></i> Unity / C#</li>
+              <li><i class="fa fa-video"></i> FinalCut</li>
+            </ul>
+          </div>
+          
+          <div class="profile">
+            <h2>Perfil Profesional</h2>
+            <p>Técnico en Desarrollo de Aplicaciones Web con conocimientos sólidos en PHP, Node, Angular, SQL, Java, etc. Compromiso, trabajo en equipo y capacidad de resolución de problemas. Apasionado por la tecnología y el aprendizaje continuo.</p>
+          </div>
+
+        </article>
+      </div>
+
+      <div class="wrapper row4 bgded overlay" style="background-image:url('images/demo/backgrounds/02.png');">
+        <footer id="footer" class="hoc clear"> 
+
+          <div class="one_third first">
+            <h3 class="heading">Santhy Carlo Noto</h3>
+          </div>
+          <div class="one_third">
+            <ul class="nospace meta">
+              <li class="btmspace-15"><i class="fa fa-phone"></i> +34 689 917 650</li>
+              <li><i class="fa fa-envelope-o"></i> Santhy472@gmail.com</li>
+            </ul>
+          </div>
+          <div class="one_third"></div>
+
+        </footer>
+      </div>
+
+      <div class="wrapper row5"></div>
+
+      <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+      <!-- JAVASCRIPTS -->
+      <script src="layout/scripts/jquery.min.js"></script>
+      <script src="layout/scripts/jquery.backtotop.js"></script>
+      <script src="layout/scripts/jquery.mobilemenu.js"></script>
+      <script src="layout/scripts/jquery.flexslider-min.js"></script>
+    </body>
 </html>
